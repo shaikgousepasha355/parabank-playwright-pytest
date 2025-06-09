@@ -1,0 +1,5 @@
+UI:
+  base_url: "https://parabank.parasoft.com/parabank"
+
+API:
+  base_url: "https://parabank.parasoft.com/parabank/services_proxy/bank"
