@@ -36,12 +36,12 @@ def test_e2e_ui(browser_launch_context, config, unique_user):
 
         # 5. Create a Savings account
         account_page = AccountPage(page)
-        new_account_id = account_page.open_new_savings_account()
+        new_account_id, minimum_amount_transferred = account_page.open_new_savings_account()
         assert new_account_id.isdigit(), "Account creation failed"
         
         # 6. Validate Accounts overview page
         balance = account_page.get_account_balance(new_account_id)
-        assert balance == 500, "Account balance not displayed"
+        assert balance == minimum_amount_transferred, "Account balance not displayed"
 
         # 7. Transfer funds to another account from new account of step 5
         transfer_page = TransferPage(page)

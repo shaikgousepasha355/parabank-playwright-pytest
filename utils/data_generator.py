@@ -4,7 +4,7 @@ import random
 fake = Faker()
 
 def generate_unique_user():
-    username = f"{fake.user_name()}_b{random.randint(1000, 9999)}"
+    username = f"{fake.user_name()}{random.randint(1000, 9999)}_"
     password = fake.password(length=10)
     return {
         "first_name": fake.first_name(),
